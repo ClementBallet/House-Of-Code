@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+/* CSS général */
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  font-family: 'Open Sans';
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+h2 {
+  color: red;
+  font-weight: 300;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li::before, .arrow::before {
+  content: "\0025B8";
+  margin-right: 4px;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+/* Wrapper englobant la page web */
+
+.wrapper {
+  width: 1350px;
+  display: flex;
+  margin: auto;
+  border: 3px solid lightgrey;
+  background-color: whitesmoke;
+}
+
+/* Wrapper englobant la page web en responsive */
+
+@media (max-width: 1280px) {
+  .wrapper {
+      width: 100%;
+  }
+}
+
+/* Section présentation */
+
+.presentation {
+  width: 20%;
+  padding: 50px;
+  border-right: 3px solid lightgrey;
+}
+
+.presentation img {
+  display: block;
+  margin: auto;
+}
+
+/* Section content */
+
+.content {
+  width: 80%;
+  padding: 50px;
+}
+
+/* Section content > header > background objectif */
+
+.objectif-before {
+  border-radius: 50% 0% 0% 50%;
+  background-color: #c00;
+  padding: 2px 10px;
+}
+
+.objectif {
+  background-color: #c00;
+  padding: 2px;
+  color: white;
+}
+
+.objectif-after {
+  border-radius: 0% 50% 50% 0%;
+  background-color: #c00;
+  padding: 2px 10px;
+  margin: -4px;
+}
+
+/* Section content > main */
+
+main {
+  display: flex;
+}
+
+/* Section content > main > content-left */
+
+.content-left {
+  padding-right: 30px;
+}
+
+.img-avant-gout {
+  background: url("avant-gout.png") no-repeat right top;
+}
+
+.img-openscop {
+  background: url("openscop.png") no-repeat right top;
+}
+
+.img-rra {
+  background: url("rra.png") no-repeat right top;
+}
+
+/* Section content > main > content-right */
+
+.content-right {
+  padding-left: 30px;
+}
+
+/* Rating star */
+
+.rating-star {
+  font-size: 3rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0 2rem;
+  position: relative;
+  display: block;
+  float: left;
+}
+
+/* 4 stars */
+
+.four-stars {
+  content: "\2605\00a0\2605\00a0\2605\00a0\2605\00a0\2606";
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
