@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Formulaire de contact | CV Clément Ballet</title>
+        <!-- Icône onglet navigateur -->
+        <link href="img.png" rel="shortcut icon" >
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="cv-form.css">
+    </head>
+    <body>
+        <header>
+            <h1>Formulaire de contact | CV Clément Ballet</h1>
+        </header>
+
+        <iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=4.803340137004853%2C45.769631575566784%2C4.806880652904511%2C45.7713041900288&amp;layer=mapnik&amp;marker=45.77046788906772%2C4.805110394954681" style="border: 1px solid black"></iframe>
+
+        <div class="main">
+            <div class="content-left">
+                <h2>Vous souhaitez me contacter ?</h2>
+                <p>Merci d'utiliser le formulaire de contact à votre disposition.</p>
+            </div>
+            <div class="content-right">
+                <form class="" action="" method="post">
+                    <div>
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="user_name">
+                    </div>
+                    <div>
+                        <label for="mail">E-mail :</label>
+                        <input type="email" id="mail" name="user_mail">
+                    </div>
+                    <div>
+                        <label for="age">Votre date de naissance :</label>
+                        <input type="date"/>
+                    </div>
+                    <div>
+                        <label for="age">Votre couleur préférée :</label>
+                        <input type="color"/>
+                    </div>
+                    <div>
+                        <p>Sur quel continent habitez-vous ?</p>
+                        <input type="radio" name="continent" value="europe" id="europe" /> <label for="europe">Europe</label><br />
+                        <input type="radio" name="continent" value="afrique" id="afrique" /> <label for="afrique">Afrique</label><br />
+                        <input type="radio" name="continent" value="asie" id="asie" /> <label for="asie">Asie</label><br />
+                        <input type="radio" name="continent" value="amerique" id="amerique" /> <label for="amerique">Amérique</label><br />
+                        <input type="radio" name="continent" value="australie" id="australie" /> <label for="australie">Australie</label><br />
+                        <input type="radio" name="continent" value="mars" id="mars" /> <label for="mars">Mars</label>
+                    </div>
+                    <div>
+                        <label for="pays">Quelle est votre activité préférée</label><br />
+                        <select name="activite" id="activite">
+                            <option value="sport">Sport</option>
+                            <option value="informatique">Informatique</option>
+                            <option value="jeux">Jeux Vidéos</option>
+                            <option value="tricot">Tricot</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="msg">Message :</label>
+                        <textarea id="msg" name="user_message"></textarea>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+}
+
+header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    background-color: darkcyan;
+    color: white;
+    padding: 20px;
+    width: 100%;
+}
+
+header * {
+    margin: 0;
+}
+
+header::after {
+   content: "";
+   display: block;
+   clear: both;
+}
+
+iframe {
+    border: none !important;
+    margin-top: 85px;
+}
+
+.main {
+    display: flex;
+}
+
+.content-left, .content-right {
+    width: 30%;
+    margin: auto;
+}

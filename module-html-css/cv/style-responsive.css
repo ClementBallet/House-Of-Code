@@ -1,0 +1,21 @@
+/* CSS responsive */
+
+/* Wrapper englobant la page web */
+
+@media screen and (max-width: 768px)
+{
+  .wrapper {
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+  }
+
+  .presentation {
+    width: 100%;
+  }
+
+  main {
+    display: block;
+  }
+}
