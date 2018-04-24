@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Les Conditions en JavaScript</title>
+    </head>
+    <body>
+        <!-- Ici vos futures balises html -->
+        <script type="text/javascript">
+            let monPoids = prompt('Quel poids faites-vous en kg ?');
+            let maTaille = prompt('Quelle taille faites-vous en cm ?');
+
+            maTaille = maTaille / 100;
+
+            let imc = monPoids / Math.pow(maTaille, 2);
+            imc = imc.toFixed(2);
+
+
+            if (imc < 16.5) {
+                alert(imc + " Dénutrition");
+            } else if (imc < 18.5) {
+                alert(imc + " Maigreur");
+            } else if (imc < 25) {
+                alert(imc + " Corpulence normale");
+            } else if (imc < 30) {
+                alert(imc + " Surpoids");
+            } else if (imc < 35) {
+                alert(imc + " Obésité morbide");
+            } else if (imc < 40) {
+                alert(imc + " Obésité sévère");
+            } else {
+                alert(imc + " Obésité morbide ou massive");
+            }
+
+
+
+
+        </script>
+    </body>
+</html>

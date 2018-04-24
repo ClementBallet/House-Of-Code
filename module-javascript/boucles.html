@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Les Boucles en JavaScript</title>
+    </head>
+    <body>
+        <div id="content"></div>
+
+        <script type="text/javascript">
+            // on sélectionne un élément de notre page
+            let divContent = document.querySelector("#content");
+
+            console.log('divContent', divContent);
+
+            for(let i = 0; i <= 11; i++) {
+               let content = 'o';
+
+               for(let j = 0; j < i; j++){
+                 content += 'o';
+               }
+
+              divContent.append(content);
+              divContent.innerHTML += '<br>';
+            }
+
+            for(let i = 12; i >= 0; i--) {
+               let content = 'o';
+
+               for(let j = 0; j < i; j++){
+                 content += 'o';
+               }
+
+              divContent.append(content);
+              divContent.innerHTML += '<br>';
+            }
+
+
+
+
+        </script>
+
+        <script type="text/javascript">
+            // let monNombre = 0;
+            //
+            // let i = 0;
+            //
+            // while (i < 100) {
+            //     monNombre += 2;
+            //     i++;
+            //
+            //     console.log(i + ' : ' + monNombre);
+            // }
+
+
+            // let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+            //
+            // console.log('alphabet : ', alphabet);
+            //
+            // alphabet = alphabet.split('');
+            //
+            // console.log('alphabet : ', alphabet);
+            // console.log('alphabet index 0 : ', alphabet[0]);
+            // console.log('alphabet index 1 : ', alphabet[1]);
+            // console.log('alphabet index 2 : ', alphabet[2]);
+            //
+            // for (var i = 0; i < alphabet.length; i++) {
+            //     console.log(alphabet[i]);
+            // }
+
+            // Suite de Fibonacci
+            let a = 0;
+            let b = 1;
+
+            console.log(a);
+            console.log(b);
+
+            for (let i = 0; i < 20; i++) {
+                let c = a + b;
+                a = b;
+                b = c;
+
+                console.log(c);
+            }
+
+        </script>
+    </body>
+</html>

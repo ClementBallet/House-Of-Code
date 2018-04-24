@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        #snake{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+
+        }
+
+        .snake-part{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: darkgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="snake">
+            <div class="snake-part"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // Déclaration des variables globales à notre programme
+        const snake = document.querySelector('#snake');
+
+        let dX = 1;
+        let dY = 0;
+
+        function initKeyboardListener() {
+            // écoute des event clavier
+            snake.addEventListener("keydown", function (event) {
+              if (event.defaultPrevented) {
+                return; // Should do nothing if the key event was already consumed.
+              }
+
+              switch (event.key) {
+                case "ArrowDown":
+                    dX = 0;
+                    dY = 1;
+                  break;
+                case "ArrowUp":
+
+                  break;
+                case "ArrowLeft":
+
+                  break;
+                case "ArrowRight":
+                  snake.style.right = (currentPositionRight + 20) + "px";
+                  break;
+                case "Enter":
+                  console.log("Enter");
+                  break;
+                case "Escape":
+                  console.log("Escape");
+                  break;
+                default:
+                  return; // Quit when this doesn't handle the key event.
+
+
+              // Consume the event for suppressing "double action".
+              event.preventDefault();
+            }, true);
+        }
+
+        function moveSnake(event) {
+            console.log(event);
+            let currentPositionLeft = snake.offsetLeft;
+            let currentPositionTop = snake.offsetTop;
+
+            // déplacement du serpent
+            snake.style.right = (currentPositionRight + 20) + "px";
+            snake.style.top = (currentPositionTop + 20) + "px";
+            snake.style.left = (currentPositionLeft + 20) + "px";
+            snake.style.right = (currentPositionRight + 20) + "px";
+        }
+
+        function init() {
+            initKeyboardListener();
+
+            // on lance la fonction de déplacement au rythme de 3 images par seconde
+            setInterval(function() {
+                moveSnake();
+            }, 1000 / 3)
+        }
+
+        init();
+    </script>
+</body>
+</html>
