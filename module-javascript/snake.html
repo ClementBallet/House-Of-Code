@@ -50,7 +50,7 @@
 
         function initKeyboardListener() {
             // écoute des event clavier
-            snake.addEventListener("keydown", function (event) {
+            window.addEventListener("keydown", function (event) {
               if (event.defaultPrevented) {
                 return; // Should do nothing if the key event was already consumed.
               }
