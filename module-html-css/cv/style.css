@@ -12,6 +12,7 @@ body {
 a {
   color: inherit;
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 h1 {
@@ -61,6 +62,10 @@ ul li::before, .arrow::before {
   margin: auto;
 }
 
+.button-hamburger {
+    display: none;
+}
+
 /* Section content */
 
 .content {
@@ -68,25 +73,11 @@ ul li::before, .arrow::before {
   padding: 50px;
 }
 
-/* Section content > header > background objectif */
-
-.objectif-before {
-  border-radius: 50% 0% 0% 50%;
-  background-color: #c00;
-  padding: 2px 12px;
-}
-
 .objectif {
   background-color: #c00;
-  padding: 2px;
+  padding: 2px 20px 2px 20px;
   color: white;
-}
-
-.objectif-after {
-  border-radius: 0% 50% 50% 0%;
-  background-color: #c00;
-  padding: 2px 10px;
-  margin: -5px;
+  border-radius: 1rem;
 }
 
 /* Section content > main */

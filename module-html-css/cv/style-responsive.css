@@ -4,18 +4,56 @@
 
 @media screen and (max-width: 768px)
 {
-  .wrapper {
-    display: block;
-    width: 100%;
-    margin: 0;
-    background-color: white;
-  }
+    .wrapper {
+        display: block;
+        /* width: calc(100% - 22px); */
+        width: 100%;
+        /* width: $('body').innerWidth(); */
+        margin: 0;
+        background-color: white;
+        border: none;
+    }
 
-  .presentation {
-    width: 100%;
-  }
+    .presentation {
+        margin: 0;
+        border-right: none;
 
-  main {
-    display: block;
-  }
+        padding: 0;
+    }
+
+    .presentation aside {
+        display: none;
+        width: 50%;
+        padding: 20px;
+        background-color: lightskyblue;
+        position: absolute;
+    }
+
+    .button-hamburger {
+        display: block;
+        border: 1px solid;
+        border-radius: 5px;
+        width: 19px;
+        padding: 9px;
+        text-align: center;
+        margin: 22px;
+    }
+
+    main {
+        display: block;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .content-left {
+        padding-right: 0;
+    }
+
+    .content-right {
+        padding-left: 0;
+    }
 }

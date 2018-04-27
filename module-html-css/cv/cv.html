@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
-
-    <meta charset="utf-8">
     <title>CV Clément Ballet</title>
     <!-- Icône onglet navigateur -->
     <link href="img.png" rel="shortcut icon" >
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" media="screen and (max-width: 768px)" href="style-responsive.css" />
+    <link href="hamburgers.min.css" rel="stylesheet">
 
   </head>
   <body>
     <!-- BOF wrapper -->
     <div class="wrapper">
       <!-- BOF aside presentation -->
-      <aside class="presentation">
-        <img src="img.png" alt="" title="Photo Clément Ballet">
 
-        <h2>Infos</h2>
-        <ul>
-          <li>29 ans</li>
-          <li>France</li>
-          <li>Permis B</li>
-        </ul>
+      <div class="presentation" >
+          <!-- <a class="button-hamburger" id="button-hamburger" onclick="affiche_menu()">
+              <i class="fas fa-bars"></i>
+          </a> -->
 
-        <h2>Contact</h2>
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:clementballet@gmail.com">clementballet@gmail.com</a>
+        <button class="hamburger hamburger--spin" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
 
-        <h2>Présentation</h2>
-        <p>J'ai effectué pendant l'année scolaire 2016-2017 un diplôme universitaire intitulé Design Tech Académie. Se déroulant à l'école d'ingénieurs Télécom Saint- Etienne, cette formation vise à acquérir les bases du code en développement web et mobile. Je cherche maintenant à obtenir un niveau BAC+2 en passant par la House Of Code de Lyon. Cela me permettrait de me perfectionner et de valider un diplôme reconnu.</p>
-      </aside>
-      <!-- EOF aside presentation -->
+          <aside id="presentation">
+            <img src="img.png" alt="Photo Clément Ballet" title="Photo Clément Ballet">
+
+            <h2>Infos</h2>
+            <ul>
+              <li>29 ans</li>
+              <li>France</li>
+              <li>Permis B</li>
+            </ul>
+
+            <h2>Contact</h2>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:clementballet@gmail.com">clementballet@gmail.com</a>
+
+            <h2>Présentation</h2>
+            <p>J'ai effectué pendant l'année scolaire 2016-2017 un diplôme universitaire intitulé Design Tech Académie. Se déroulant à l'école d'ingénieurs Télécom Saint- Etienne, cette formation vise à acquérir les bases du code en développement web et mobile. Je cherche maintenant à obtenir un niveau BAC+2 en passant par la House Of Code de Lyon. Cela me permettrait de me perfectionner et de valider un diplôme reconnu.</p>
+          </aside>
+          <!-- EOF aside presentation -->
+
+      </div>
+
       <!-- BOF div content -->
       <div class="content">
 
         <header>
           <h1>Ballet Clément</h1>
           <h1>Développeur web full stack</h1>
-          <span class="objectif-before"></span>
           <span class="objectif">Objectif: BAC+2</span>
-          <span class="objectif-after"></span>
           <p>Pour en savoir plus, consultez mon CV en ligne : <a href="www.doyoubuzz.com/ballet-clement">www.doyoubuzz.com/ballet-clement</a></p>
         </header>
 
@@ -218,5 +233,11 @@
       <!-- EOF div content -->
     </div>
     <!-- EOF wrapper -->
+
+    <!-- JS -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+
+    <script src="menu.js"></script>
   </body>
 </html>
