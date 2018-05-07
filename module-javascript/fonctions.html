@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <script>
+
+        /**
+        * Retourne si le nombre est pair ou pas
+        * @param number
+        */
+
+        function isPair(myNumber) {
+            return Math.round(myNumber) %2 === 0;
+        }
+
+        /**
+        * Retourne la factorielle d'un nombre
+        * Exemple : factorielle de 5 est 120 car 5 * 4 * 3 * 2 * 1 = 120
+        * @param number
+        */
+
+        function calculateFactorial(numberFact) {
+            resultat = 1;
+
+            for (let i = 1; i <= numberFact; i++) {
+                resultat *= i;
+            }
+
+            return resultat;
+        }
+
+        console.log(isPair(-4));
+        
+        console.log(calculateFactorial(5));
+
+        
+    
+    </script>
+
+
+</body>
+</html>

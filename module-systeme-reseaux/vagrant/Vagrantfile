@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+app = {
+  :name        => 'Hoc',
+  :box         => 'manala/app-dev-debian',
+  :box_version => '~> 3.0.0',
+  :box_memory  => 1024
+}
+
+Vagrant.require_version '>= 1.8.4'
+
+Vagrant.configure(2) do |config|
+
+  # Force vagrant to use virtualbox provider
+  config.vm.provider "virtualbox"
+  config.vm.network :forwarded_port, guest: 80, host: 80
+  config.vm.network :forwarded_port, guest: 1979, host: 1979
+
+  # Ssh
+  config.ssh.username      = 'app'
+  config.ssh.forward_agent = true
+
+  # Vm
+  config.vm.box           = app[:box]
+  config.vm.box_version   = app[:box_version]
+  config.vm.hostname      = app[:name] + '.vm'
+  config.vm.define        'localhost' do |localhost| end
+  config.vm.synced_folder '.', '/srv/app'
+
+  # Vm - Provider - Virtualbox
+  config.vm.provider :virtualbox do |virtualbox|
+    virtualbox.name   = app[:name]
+    virtualbox.memory = app[:box_memory]
+  end
+end
