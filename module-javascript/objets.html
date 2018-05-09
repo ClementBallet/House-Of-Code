@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Objets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <script>
+        
+        // Déclaration du tableau
+
+        let people = [
+            people01 = {
+                firstName: 'Toto',
+                lastName : 'Dupont',
+                age : 45,
+                email : 'toto@gmail.com',
+                gender : 'Homme',
+                fullName: function() {
+                    return this.firstName + ' ' + this.lastName;
+                }
+            }, 
+
+            people02 = {
+                firstName: 'Tata',
+                lastName : 'Dupont',
+                age : 150,
+                email : 'tata@gmail.com',
+                gender : 'Femme',
+                fullName: function() {
+                    return this.firstName + ' ' + this.lastName;
+                }
+            },
+
+            people03 = {
+                firstName: 'Titi',
+                lastName : 'Dupont',
+                age : 74,
+                email : 'titi@gmail.com',
+                gender : 'Homme',
+                fullName: function() {
+                    return this.firstName + ' ' + this.lastName;
+                }
+            }
+        ];
+            
+        // Récupère le nom et le prénom
+
+        function fullName() {
+            console.log('people', people)
+            for (let i = 0; i < people.length; i++) {
+                return people[i].fullName();
+            }
+        }
+
+        console.log(fullName());
+        
+        // Récupère le nombre de femmes
+
+        function nbGirls(tab) {
+            let res = 0;
+
+            for (let i = 0; i < tab.length; i++) {
+                let person = tab[i];
+
+                if(person.gender == 'Femme') {
+                    res++;
+                }
+            }
+            return res;
+        }
+
+        console.log(nbGirls(people));
+
+        // Récupère le nombre d'hommes
+
+        function nbBoys(tab) {
+            let res = 0;
+
+            for (let i = 0; i < tab.length; i++) {
+                let person = tab[i];
+
+                if(person.gender == 'Homme') {
+                    res++;
+                }
+            }
+            return res;
+        }
+
+        console.log(nbBoys(people));
+
+        // Récupère le nom de la personne la plus agée
+
+        function nameOldestPerson(tab) {
+            let min = 0;
+
+            for (let i = 0; i < tab.length; i++) {
+                let person = tab[i];
+               
+                if (person.age === Math.max(min,person.age)) {
+                    res = person.firstName;
+                }
+            }
+            return res;
+        }
+
+        console.log(nameOldestPerson(people));       
+
+        // Récupère le nom de la personne la plus jeune
+
+        function nameYoungestPerson(tab) {
+            let max = 150;
+
+            for (let i = 0; i < tab.length; i++) {
+                let person = tab[i];
+                
+               
+                if (person.age === Math.min(max,person.age)) {
+                    res = person.firstName;
+                }
+               
+            }
+            return res;
+        }
+
+        console.log(nameYoungestPerson(people));                
+
+    
+    </script>
+
+</body>
+</html>
