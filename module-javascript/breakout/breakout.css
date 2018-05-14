@@ -3,7 +3,7 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: chocolate;
+    background-color: #7cd1f9;
 }
 
 #container{
@@ -13,6 +13,7 @@ html, body{
     box-sizing: border-box;
     background-color: aliceblue;
     margin: 0 auto; /* centrage horizontal */
+    border-radius: 1rem;
 }
 
 #paddle {
@@ -36,5 +37,16 @@ html, body{
 
 .brick {
     position: absolute;
-    background-color: midnightblue;
+    background-color: rgb(14, 153, 44);
+}
+
+#score {
+    background-color: aliceblue;
+    width: 800px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 1rem;
+    text-align: center;
+    vertical-align: middle;
 }

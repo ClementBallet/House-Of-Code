@@ -3,6 +3,7 @@ const container = document.querySelector('#container');
 const paddle = document.querySelector('#paddle');
 const ball = document.querySelector('#ball');
 const bricks = [];
+const score = document.querySelector('#score');
 
 
 
@@ -31,7 +32,7 @@ function initKeyboardListener() {
 */
 function onKeyDown(event) {
 
-    console.log(event);
+    // console.log(event);
 
     switch (event.key) {
 
@@ -75,7 +76,7 @@ function onKeyUp(event) {
 * Move Paddle
 */
 function movePaddle() {
-    const step = 4;
+    const step = 8;
     let currentPaddlePositionX = paddle.offsetLeft;
     let paddleWidth = parseInt(window.getComputedStyle(paddle,null).getPropertyValue("width"),10);
     let paddleLeft = parseInt(window.getComputedStyle(paddle,null).getPropertyValue("left"),10);
@@ -131,9 +132,13 @@ function moveBall(){
         ballDy = -ballDy;
     }
 
-    //bottom
+    //bottom (looooser)
     if (currentBallPositionY + ballWidth > containerHeight ) {
-        ballDy = -ballDy;
+        container.removeChild(ball);
+        swal("You lose!","Retry?","error")
+        .then(() => {
+            location.reload();
+        });
     }
 
     ball.style.left = currentBallPositionX + 'px';
@@ -155,20 +160,22 @@ function checkCollisionPaddle() {
     let paddleTopY = paddle.offsetTop;
     let paddleBottomY = paddleTopY + paddleHeight;
 
-    if (ballCenterX > paddleLeftX && 
+    if  (ballCenterX > paddleLeftX && 
         ballCenterX < paddleLeftX + (paddleWidth / 2) && 
         ballCenterY > paddleTopY && 
         ballCenterY < paddleBottomY
-        ) {
-            ballDy = -ballDy;
+        ) 
+    {
+        ballDy = -ballDy;
         ballDx = -Math.abs(ballDx);
     }
 
-    if (ballCenterX > (paddleLeftX + paddleWidth / 2) && 
+    if  (ballCenterX > (paddleLeftX + paddleWidth / 2) && 
         ballCenterX < paddleRightX && 
         ballCenterY > paddleTopY && 
         ballCenterY < paddleBottomY
-    ) {
+        ) 
+    {
         ballDy = -ballDy;
         ballDx = Math.abs(ballDx);
     }
@@ -190,9 +197,11 @@ function createBrick(){
     let positionY = 0; // position y de la brique en cours de création
 
 
-    for (let i = 0; i < numberBrickPerLine; i++) {
+    for (let i = 0; i < numberBrickPerColumn; i++) {
+        positionX = (800 - (5 * 100 + 4 * 15)) / 2;
+        positionY +=  brickHeight + brickMargin;
         
-        for (let j = 0; j < numberBrickPerColumn; j++) {
+        for (let j = 0; j < numberBrickPerLine; j++) {
 
             let brick = document.createElement('div'); // creation d'un élément div
             brick.className = 'brick'; // ajout de la class css .brick
@@ -207,11 +216,52 @@ function createBrick(){
             positionX += brickWidth + brickMargin; // la position X de la brique suivante, sera la largeur d'une brique + la margin
 
             bricks.push(brick); // on ajoute la brick au tableau de briques créé dans les variables globales
+        }
+    }
+}
 
-            if (numberBrickPerLine > 5) {
-                bricks.push("<br>");
-            }
+/**
+* checkCollisionBricks 
+*/
+function checkCollisionBricks() {
+    let ballCenterX = ball.offsetLeft + ballRadius;
+    let ballCenterY = ball.offsetTop + ballRadius;
+    let countScore = 1;
 
+    for (let i = bricks.length - 1; i >= 0; i--) { // on boucle à l'envers
+        let b = bricks[i];
+
+        let brickLeft = b.offsetLeft;
+        let brickTop = b.offsetTop;
+        let brickWidth = 100;
+        let brickHeight = 22;
+        let brickRight = brickLeft + brickWidth
+        let brickBottom = brickTop + brickHeight
+
+        // Collision
+        if  (   ballCenterY < brickBottom && 
+                ballCenterY > brickTop && 
+                ballCenterX > brickLeft && 
+                ballCenterX < brickRight
+            ) 
+        {
+            ballDy = -ballDy; // changement de direction pour la balle
+            container.removeChild(b); // on supprime l'élément visuellement
+            bricks.splice(i, 1); // on supprime la brick du tableau
+            
+            
+        }
+
+        for (let j = 0; j < bricks.length; j++) {
+            score.innerHTML = countScore++;
+        }
+
+        if (bricks.length === 0) {
+            container.removeChild(ball);
+            swal("You win!","Retry?","success")
+            .then(() => {
+                location.reload();
+            });
         }
     }
 }
@@ -224,8 +274,8 @@ function loop(){
         movePaddle();
         moveBall();
         checkCollisionPaddle();
-
-        loop();
+        checkCollisionBricks();
+        loop(); // Fonction récursive
     })
 }
 
