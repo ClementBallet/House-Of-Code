@@ -1,6 +1,23 @@
 let form = document.getElementById('form__register'); // on sélectionne notre form
 
+//form.addEventListener('keypress', onSubmitForm);
+
+
+
+//form.addEventListener('click', onSubmitForm);
+
 form.addEventListener('submit', onSubmitForm); // on écoute l'event de la soumission
+
+let inputs = form.querySelectorAll('input');
+
+for(let i = 0; i < inputs.length; i++){
+    inputs[i].addEventListener('keypress', checkInputText)
+}
+
+function onChangeInput(event){
+    console.log('il y a un changeùment')
+}
+
 
 
 /**
@@ -13,86 +30,109 @@ form.addEventListener('submit', onSubmitForm); // on écoute l'event de la soumi
 function onSubmitForm(event) { 
     event.preventDefault(); // on bloque le comportement par défaut
     
-    disableErrors();
-    validateNames();
+    // Check lastname
+    checkInputText({
+        input: document.getElementById('form__register_lastname'),
+        required: true,
+        regExp: new RegExp('^[a-zA-Z- ]+$'),
+        lengthMin: 3,
+        lengthMax: 30
+    });
     
-}
-
-/**
- * disabledErrors
- * 
- * Supprime les messages et CSS d'erreurs
- */
-function disableErrors() {
-    let inputErrors = document.getElementsByClassName('form-errors');
-    let inputs = document.getElementsByTagName('input');
-
-    for (let i = 0; i < inputErrors.length; i++) {
-        inputErrors[i].className += " disable";
-    }
-
-    for (let j = 0; j < inputs.length; j++) {
-        inputs[j].classList.remove("is-invalid");
-    }
-}
-
-/**
- * validateLastName
- * 
- * Valide le nom et prénom
- */
-function validateNames() {
-    // Récupère la valeur de last name
-    let inputLastname = document.getElementById('form__register_lastname');
-    let inputLastnameValue = inputLastname.value;
-    // Récupère la valeur de first name
-    let inputFirstName = document.getElementById('form__register_firstname');
-    let inputFirstNameValue = inputFirstName.value;
-    // RegExp qui permet de checker si pas de caractères spéciaux
-    let regEx = new RegExp("^([a-zA-Z-éèàöëïîôê]+)$", 'i');
+    // Check firtname
+    checkInputText({
+        input: document.getElementById('form__register_firstname'),
+        required: false,
+        regExp: new RegExp('^[a-zA-Z- ]+$'),
+        lengthMin: 3,
+        lengthMax: 30
+    });
     
-    if (inputLastnamevalue.length <= 3 && inputLastnamevalue.length <= 30) {
-        if (regEx.test(inputLastnameValue)) {
-            inputLastname.className += " is-valid";
-        } else {
-            inputLastname.className += " is-invalid";
-            inputLastname.parentElement.getElementsByClassName('form-errors')[0].innerHTML = "<small class='text-danger'>Votre nom ne peut contenir que des lettres, des chiffres et des tirets.</small>";
-        }
-    } else {
-        inputLastname.parentElement.getElementsByClassName('form-errors')[0].innerHTML = "<small class='text-danger'>Votre nom doit contenir doit contenir entre 3 et 30 caractères.</small>";
-    }
+    // Check email
+    checkInputText({
+        input: document.getElementById('form__register_email'),
+        required: true,
+        regExp: new RegExp('/^\S+@\S+\.\S+$/')
+    });
+    
+    // Check password
+    checkInputText({
+        input: document.getElementById('form__register_password'),
+        required: true,
+        regExp: new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{7,20}"),
+        lengthMin: 7,
+        lengthMax: 20
+    });
 
-    if (inputFirstNameValue.length <= 3 && inputFirstNameValue.length <= 30) {
-        if (regEx.test(inputFirstNameValue)) {
-            inputFirstName.className += " is-valid";
-        } else {
-            inputFirstName.className += " is-invalid";
-            inputFirstName.parentElement.getElementsByClassName('form-errors')[0].innerHTML = "<small class='text-danger'>Votre prénom ne peut contenir que des lettres, des chiffres et des tirets.</small>";
-        }
-    } else {
-        inputFirstName.parentElement.getElementsByClassName('form-errors')[0].innerHTML = "<small class='text-danger'>Votre prénom doit contenir doit contenir entre 3 et 30 caractères.</small>";
-    }
+    // Check password repeat
+    checkInputText({
+        input: document.getElementById('form__register_password-repeat'),
+        required: true,
+        regExp: new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{7,20}"),
+        lengthMin: 7,
+        lengthMax: 20
+    });
+
+    // Check conditions
+    /*
+    checkInputText({
+        input: document.getElementById('form__register_conditions'),
+        required: true
+    });
+    */
 }
 
 /**
- * validateEmail
+ * checkInputText
  * 
- * Valide l'email
- */
-function validateEmail() {
-
-}
-
-/**
- * validatePassword
+ * param : options (array)
  * 
- * Valide le password
+ * Vérification du formulaire
  */
-function validatePassword() {
 
+function checkInputText(options) {
+    // Get Value
+    let input = options.input;
+    let inputValue = input.value;
+    let inputErrorMessage = input.parentElement.querySelector('.form-errors');
+    // Reset Input
+    options.input.classList.remove(['is-valid', 'is-invalid']);
+    inputErrorMessage.innerHTML = '';
+    // Error default value
+    let error = {
+        hasError : false,
+        className : 'is-valid',
+        text : ''
+    };
+    // Check if required
+    if(options.required && inputValue.length === 0){
+        error.hasError = true;
+        error.text += '<small class="text-danger">Ce champ est requis</small><br>';
+    }
+    // if (options.required && input.type === "checkbox") {
+    //     error.hasError = true;
+    //     error.text += '<small class="text-danger">Vous devez accepter les conditions générales</small><br>';
+    // }
+    if(options.required && inputValue.length > 0) {
+        // Check is letter and - and space only
+        if (!options.regExp.test(inputValue)) {
+            error.hasError = true;
+            error.text += '<small class="text-danger">Le champ n\'est pas valide</small><br>';
+        }
+        // Check string length min
+        if (options.lengthMin && inputValue.length < options.lengthMin) {
+            error.hasError = true;
+            error.text += '<small class="text-danger">Ce champ est trop court</small>';
+        }
+        // Check string length max
+        if (options.lengthMax && inputValue.length > options.lengthMax) {
+            error.hasError = true;
+            error.text += '<small class="text-danger">Ce champ est trop long</small>';
+        }
+    }
+    error.className = (error.hasError)? 'is-invalid' : 'is-valid';
+    // Set new values
+    input.classList.add(error.className);
+    inputErrorMessage.innerHTML = error.text;
 }
-
-
-
-
 
