@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO | JS</title>
+</head>
+<body>
+    
+<script>
+    
+class Person {
+    constructor(firstname, lastname, email, age, gender) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    fullName() {
+        return this.firstname + ' ' + this.lastname;
+    }
+
+    isAdult() {
+        return this.age >= 18 ? true : false;
+    }
+}
+
+
+let p1 = new Person('Alex', 'P', 'plop@gmail.com', 29, 'M');
+let p2 = new Person('Toto', 'P', 'toto@gmail.com', 12, 'M');
+let p3 = new Person('Robert', 'P', 'robert@gmail.com', 67, 'M');
+let p4 = new Person('Elise', 'P', 'elise@gmail.com', 15, 'F');
+let p5 = new Person('Gertrude', 'P', 'gertrude@gmail.com', 56, 'F');
+
+let personTab = [ 
+    p1,
+    p2,
+    p3,
+    p4,
+    p5 
+];
+
+console.log('p1', p1);    
+console.log(personTab);
+
+let count = 0;
+
+for (let i = 0; i < personTab.length; i++) {
+    if (personTab[i].isAdult) {
+        console.log(count++);
+    } 
+}
+
+
+
+</script>
+</body>
+</html>
