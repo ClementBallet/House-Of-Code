@@ -10,6 +10,8 @@
 - POO
 - Breakout (casse-brique)
 - jQuery
+- AJAX
+- API
 
 ## Module PHP
 
