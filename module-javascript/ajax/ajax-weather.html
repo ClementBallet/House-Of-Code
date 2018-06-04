@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AJAX - API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    
+    
+</head>
+<body>
+    <h1>AJAX - API</h1>
+    <h4>Avec l'API <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></h4>
+    <div class="weather">
+        <div id="map"></div>
+        <div class="data">
+            <h1 id="city"></h1>
+            <small id="coords"></small>
+            <div id="icon"></div>
+            <p id="temp"></p>
+            <p id="temp-min"></p>
+            <p id="temp-max"></p>
+            <p id="humidity"></p>
+        </div>
+    </div>
+
+    <form id="formweather" action="" method="GET" novalidate>
+        <div class="inputs-container">
+            <input type="text" name="city_input" id="city_input" placeholder="New York City, London, Triffoulli...">
+            <input type="submit" value="Rechercher une ville">
+        </div>
+        <small id="input-errors"></small>
+    </form>
+    
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnS4Nodj0YDKlfJL7pG_-i3YlCzoeNK34" async defer></script>
+</body>
+</html>

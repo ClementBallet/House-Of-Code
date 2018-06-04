@@ -1,0 +1,57 @@
+*, body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.weather {
+    width: 500px;
+    height: 440px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    background: linear-gradient(to bottom, #1b75ef 0%, #00b4ff 100%);
+}
+
+#map {
+    height: 200px;
+}
+
+.data {
+    margin-top: 20px;
+}
+
+#icon {
+    width: 50px;
+    height: 50px;
+}
+
+form {
+    width: 500px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inputs-container {
+    display: flex;
+}
+
+form input {
+    width: 49%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: auto;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+#input-errors {
+    color: red;
+}
