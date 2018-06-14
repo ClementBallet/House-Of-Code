@@ -1,0 +1,35 @@
+.hexagon-container {
+    display: flex;
+}
+
+.hexagon {
+    width: 208px;
+    height: 104px;
+    background: #cc3338;
+    position: relative;
+    margin: 60px 15px 15px 15px;
+}
+
+.hexagon:before {
+    content: "";
+    position: absolute;
+    top: -52px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 104px solid transparent;
+    border-right: 104px solid transparent;
+    border-bottom: 52px solid #cc3338;
+}
+
+.hexagon:after {
+    content: "";
+    position: absolute;
+    bottom: -52px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 104px solid transparent;
+    border-right: 104px solid transparent;
+    border-top: 52px solid #cc3338;
+}

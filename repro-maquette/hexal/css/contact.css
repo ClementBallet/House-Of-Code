@@ -1,0 +1,21 @@
+.contact {
+    background-color: #323232;
+    padding: 60px 150px 60px 150px;
+}
+
+.form-container {
+    display: flex;
+}
+
+form {
+    display: block;
+    width: 80%;
+}
+
+form input[type="text"] {
+    width: 100%;
+}
+
+form > div {
+    width: 20%;
+}

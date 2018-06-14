@@ -1,0 +1,70 @@
+/* Import style CSS of header section */
+@import "css/header.css";
+/* Import style CSS of portfolio section */
+@import "css/portfolio.css";
+/* Import style CSS of about section */
+@import "css/about.css";
+/* Import style CSS of contact section */
+@import "css/contact.css";
+/* Import style CSS of footer section */
+@import "css/footer.css";
+/* Import style CSS of hexagon elements */
+@import "css/hexagon.css";
+
+/* Import Google Fonts (Lato, Maven Pro)*/
+@import url('https://fonts.googleapis.com/css?family=Lato|Maven+Pro');
+
+
+/******************** 
+
+Reset CSS & global rules
+
+*********************/
+
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+body:not(header) {
+    font-family: 'Maven Pro', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+a:hover {
+    cursor: crosshair;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 30pt; 
+}
+
+h2 {
+    font-size: 26pt;
+}
+
+h3 {
+    font-size: 22pt;
+}
+
+h4 {
+    font-size: 18pt;
+}
+
+h5 {
+    font-size: 14pt;
+}
+
+h6 {
+    font-size: 10pt;
+}
