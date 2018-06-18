@@ -1,6 +1,6 @@
-# Tuto CSS : <code>DISPLAY: GRID;</code>
+# Tuto CSS : <code>display: grid;</code>
 
-Lien vers le tuto : <a href="https://www.grafikart.fr/tutoriels/html-css/grid-css-1002">https://www.grafikart.fr/tutoriels/html-css/grid-css-1002</a>
+Lien vers le tuto : <a href="https://www.grafikart.fr/tutoriels/html-css/grid-css-1002" target="_blank">https://www.grafikart.fr/tutoriels/html-css/grid-css-1002</a>
 
 ## Objectif : créer un template en grille facilement avec le display grid
 
