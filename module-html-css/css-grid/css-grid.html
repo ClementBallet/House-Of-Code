@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <h1>Display Grid</h1>
+    
+    <div class="grid">
+        <div>
+            <h1>2fr</h1>
+        </div>
+        <div>
+            <h1>8fr<br>grid-column-gap: 20px; <i>(marges entre les colonnes)</i></h1>
+        </div>
+        <div>
+            <h1>2fr</h1>
+        </div>
+        <div>
+            <h1>2fr</h1>
+        </div>
+        <div>
+            <h1>8fr</h1>
+        </div>
+        <div>
+            <h1>2fr</h1>
+        </div>
+        <div>
+            <h1>2fr</h1>
+        </div>
+        <div>
+            <h1>8fr</h1>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="grid2">
+        <div class="child">
+            <h1>grid-template-columns: 2fr 8fr 2fr;<br>grid-column-start: 2;<br>grid-row-start: 2;</h1>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="grid3">
+        <div class="child">
+            <h1>grid-template-columns: 2fr 8fr 2fr;<br>grid-column-start: 1;<br>grid-column-end: span 2;<br>grid-row-start: 2;</h1>
+        </div>
+    </div>
+
+    <hr>
+
+    <section class="site">
+        <header class="header">
+            <h1>HEADER</h1>
+            <h1>COL <i>(width)</i>: 2fr 8fr <i>(100%)</i></h1>
+            <h1>ROW <i>(height)</i>: 100%</h1>
+        </header>
+        <article class="body">
+            <h1>ARTICLE</h1>
+            <h1>COL <i>(width)</i>: 8fr</h1>
+            <h1>ROW <i>(height)</i>: 1fr</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima assumenda velit ipsum nulla accusantium necessitatibus doloribus temporibus natus, corrupti obcaecati? Aspernatur non officiis quam. Expedita nostrum nulla hic rem iure?</p>
+            <p>Temporibus quibusdam necessitatibus atque, quod quia ullam autem. Tenetur accusamus eum, iure repudiandae error fugit facilis aliquam fuga corrupti dolore voluptatibus mollitia libero dolor maiores vero id! Cum, voluptatibus magnam.</p>
+            <p>Accusamus voluptas consequuntur consequatur dolor nobis placeat totam assumenda similique excepturi fugiat. Sequi nihil earum repudiandae ipsam inventore obcaecati beatae iure. Adipisci corrupti architecto praesentium neque fuga aspernatur ad est.</p>
+            <p>Quidem animi sit odit excepturi deserunt nobis ipsa adipisci facilis, rerum exercitationem pariatur perferendis voluptates! Odio asperiores, quae inventore cupiditate, minus eaque voluptatem exercitationem dolores quas quos ipsa sunt neque?</p>
+        </article>
+        <aside class="sidebar">
+            <h1>SIDEBAR</h1>
+            <h1>COL <i>(width)</i>: 2fr</h1>
+            <h1>ROW <i>(height)</i>: 1fr</h1>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vitae suscipit voluptate nostrum quo soluta quas, ratione animi beatae cum molestias enim odit totam placeat delectus ipsa fuga! Maiores, voluptates?</li>
+                <li>Eos possimus porro odit doloribus dolorem impedit dicta quod qui hic, totam autem earum in praesentium adipisci nisi officia corporis dolores natus vitae quam! Ex eos modi fugit itaque ipsam?</li>
+                <li>Dignissimos repellat blanditiis, voluptate veritatis quis aspernatur? Sequi amet provident doloremque labore blanditiis inventore optio, sit ad nisi cum ducimus magni sed reprehenderit. Rerum autem quaerat non tenetur, id debitis?</li>
+                <li>Nemo, ratione, fugit facere magni odit esse vitae perferendis libero molestias quasi quae totam? Ea tempora mollitia at nostrum officia minus delectus, quo quas aspernatur voluptatem placeat quisquam exercitationem labore!</li>
+            </ul>
+        </aside>
+        <footer class="footer">
+            <h1>FOOTER | COL <i>(width)</i>: 2fr 8fr <i>(100%)</i> | ROW <i>(height)</i>: 100%</h1>
+        </footer>
+    </section>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.grid > div,
+.grid2 > div,
+.grid3 > div {
+    background-color: #ccc;
+    border: solid 1px #999;
+}
+
+.grid, 
+.grid2,
+.grid3 {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-column-gap: 20px;
+}
+
+.grid2,
+.grid3 {
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.grid2 .child {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.grid3 .child {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 2;
+}
+
+.site {
+    display: grid;
+    grid-template-rows: 100% 1fr 100%;
+    grid-template-columns: 2fr 8fr;
+    grid-template-areas: 
+        "header header"
+        "sidebar body"
+        "footer footer";
+    grid-gap: 10px;    
+}
+
+.site .header {
+    grid-area: header;
+    background-color: rgb(245, 135, 135);
+    border: solid 1px rgb(204, 12, 12);    
+}
+
+.site .body {
+    grid-area: body;
+    background-color: rgb(118, 127, 202);
+    border: solid 1px rgb(20, 22, 150);    
+}
+
+.site .sidebar {
+    grid-area: sidebar;
+    background-color: rgb(97, 211, 103);
+    border: solid 1px rgb(14, 124, 14);    
+}
+
+.site .footer {
+    grid-area: footer;
+    background-color: rgb(207, 107, 211);
+    border: solid 1px rgb(145, 17, 150);    
+}
