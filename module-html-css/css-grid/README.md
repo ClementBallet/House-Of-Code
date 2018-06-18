@@ -1,4 +1,4 @@
-#Tuto CSS : DISPLAY: GRID;
+# Tuto CSS : <code>DISPLAY: GRID;</code>
 
 Lien vers le tuto : <a href="https://www.grafikart.fr/tutoriels/html-css/grid-css-1002">https://www.grafikart.fr/tutoriels/html-css/grid-css-1002</a>
 
