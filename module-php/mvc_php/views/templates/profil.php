@@ -1,17 +1,7 @@
-<?php
-// Je dois faire session_start() pour avoir accès à la variable $_SESSION
-session_start();
+<?php include('views/includes/header.php'); ?>
 
-include('views/includes/header.php');
-?>
+		Je suis connecté sous le nom : <?php echo $_SESSION['username']; ?>
 
-Je suis connecté sous le nom : <?php echo $_SESSION['username']; ?>
-<br>
-J'ai <?php echo $_SESSION['age'] ?> ans.
-<br>
-<a href="index.php?page=logout">Me déconnecter</a>
+		<a href="index.php?page=logout">Me déconnecter</a>
 
-
-<?php
-
-include('views/includes/footer.php');
+<?php include('views/includes/footer.php'); ?>

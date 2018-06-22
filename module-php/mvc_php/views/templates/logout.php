@@ -1,15 +1,10 @@
 <?php
-// Je dois utiliser session_start() pour pouvoir interagir avec
-session_start();
-
 // Et maintenant je détruis complètement la session
 session_destroy();
 
 include('views/includes/header.php');
 ?>
 
-<a href="index.php?page=login">Retourner sur la page de connexion</a>
+		<a href="index.php?page=login">Retourner sur la page de connexion</a>
 
-<?php
-
-include('views/includes/footer.php');
+<?php include('views/includes/footer.php'); ?>

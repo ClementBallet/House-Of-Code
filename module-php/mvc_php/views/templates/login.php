@@ -1,38 +1,22 @@
 <?php
 
 // Tester si $_SESSION['username'] existe
-if(!empty($_SESSION['username'])) {
-	header('Location: profil.php');
+// Pour rediriger vers le profil
+if( !empty($_SESSION['username']) ) {
+	header('Location: index.php?page=profil');
 	exit();
 }
 
 include('views/includes/header.php');
 ?>
+		<form action="index.php?page=traitement" method="post">
+			<label for="username">Username</label>
+			<input type="text" name="username" placeholder="Username" id="username" />
 
+			<label for="password">Mot de passe</label>
+			<input type="password" name="password" placeholder="Mot de passe" id="password" />
 
-
-<!-- Ici, j'envoie les données en post -->
-<form action="index.php?page=traitement" method="post">
-	<label for="username">Username</label>
-	<!--
-	Je précise que mon input pour être récupéré en PHP avec son attribut name
-		name="username" -> $_POST['username']
-	-->
-	<input type="text" name="username" placeholder="Username" id="username" />
-
-	<label for="password">Mot de passe</label>
-	<!--
-		name="password" -> $_POST['password']
-	-->
-	<input type="password" name="password" placeholder="Mot de passe" id="password" />
-
-	<input type="submit" />
-</form>
-
-
-<?php
-
-include('views/includes/footer.php');
-
-?>
-
+			<input type="submit" />
+		</form>
+		
+<?php include('views/includes/footer.php'); ?>
