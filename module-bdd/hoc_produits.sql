@@ -6,19 +6,19 @@ FROM produit p
 INNER JOIN produit_categorie pc ON p.id_produit = pc.id_produit
 -- Afficher le nom des catégories pour lesquelles on a des produits visibles (= 1)
 SELECT DISTINCT c.nom AS 'Nom catégorie', p.nom AS 'Nom produit'
-FROM produit p  
+FROM produit p
 INNER JOIN produit_categorie pc ON p.id_produit = pc.id_produit
 INNER JOIN categorie c ON pc.id_categorie = c.id_cat
 WHERE p.visible = 1;
 -- Afficher le somme du prix de tous les produits de la catégorie "Accessoire"
-SELECT sum(p.prix_HT) 
-FROM produit p  
+SELECT sum(p.prix_HT)
+FROM produit p
 INNER JOIN produit_categorie pc ON p.id_produit = pc.id_produit
 INNER JOIN categorie c ON pc.id_categorie = c.id_cat
 WHERE c.nom = 'Accessoire';
 -- Afficher la moyenne du prix de tous les produits visibles de la catégorie "Pc portable"
 SELECT avg(p.prix_HT)
-FROM produit p 
+FROM produit p
 INNER JOIN produit_categorie pc ON p.id_produit = pc.id_produit
 INNER JOIN categorie c ON pc.id_categorie = c.id_cat
 WHERE p.visible = 1
@@ -26,7 +26,7 @@ AND c.nom = 'PC Portable';
 -- Afficher le nombre de produits simsilaires pour chaque produits
 SELECT produit_source.nom AS 'Nom produit', count(produit_cible.id_produit) AS 'Nombre de produits similaires'
 FROM produit produit_source
-LEFT JOIN produit_similaire ps 
+LEFT JOIN produit_similaire ps
 ON produit_source.id_produit = ps.id_produit_source
 LEFT JOIN produit produit_cible
 ON ps.id_produit_cible = produit_cible.id_produit
@@ -45,3 +45,35 @@ SELECT nom, prix_HT, visible
 FROM produit
 WHERE visible = 1
 AND prix_HT > 700;
+
+
+
+
+
+
+-- Autres exercices
+
+CREATE TABLE `hoc_produits`.`client` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `login` VARCHAR(50) NOT NULL ,
+    `email` VARCHAR(50) NOT NULL ,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE `hoc_produits`.`commande` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `dateCommande` DATETIME NOT NULL ,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+CREATE TABLE `hoc_produits`.`ligne_commande` (
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `quantite` INT NOT NULL ,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+ALTER TABLE `produit`
+ADD `stock`
+INT NOT NULL
+DEFAULT '150'
+AFTER `visible`;
