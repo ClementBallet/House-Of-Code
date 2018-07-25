@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API New York Times</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="app.css" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="main">
+        <h1>API New York Times</h1>
+        <p>Tapez un mot-clé pour rechercher un film, un/une acteur/trice, etc... et retrouver tous nos articles relatifs :</p>
+
+        <form id="form" action="" method="get" novalidate>
+            <input type="text" name="query_input" id="query_input">
+            <input type="submit" value="Search!">
+        </form>
+
+        <h3 id="num_results"></h3>
+        <div id="render-data" id="effect"></div>
+        <div id="copyright"></div>
+    </div>
+</body>
+</html>
