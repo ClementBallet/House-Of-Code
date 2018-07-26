@@ -51,6 +51,8 @@ function loopRes(data) {
     for (let i = 0; i < results.length; i++) {
 
         img = results[i].multimedia;
+        console.log(results);
+
 
         div += "<div id='result-" + (i+1) + "' class='one-result'>";
         if(img != null) {
