@@ -1,0 +1,23 @@
+<p>
+  {{ getFullName() }}
+</p>
+
+<p>
+  {{ formation.getFormation() }}
+</p>
+
+<p>
+  Optional : {{ formationJS?.nom }}
+</p>
+
+<p [style.color]= "color ? 'green' : 'red' ">
+  Texte statique qui change de couleur toutes les secondes. Du coup, pas si statique que ça.
+</p>
+
+<button (click)="isHiddenOnClick()">Faire apparaitre/disparaitre le texte</button>
+
+<p [hidden]="isHidden" (mouseover)="mouseOverText($event)" (mouseout)="mouseOutText($event)">Ce texte apparait et disparait !</p>
+
+<p class="mouseover"></p>
+
+<p class="mouseout"></p>
