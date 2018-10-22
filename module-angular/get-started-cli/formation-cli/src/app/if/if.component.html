@@ -1,0 +1,18 @@
+<h1>ngIf:</h1>
+
+<div style="display:flex;">
+  <div style="width: 50%;">
+    <p *ngIf="isDisplay" style="border:1px solid black;">Formation Angular</p>
+  </div>
+
+  <div>
+    <div *ngIf="isDisplayOnClick">
+      <h2>Formation Lorem ipsum :</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor, sint consectetur fuga harum cumque quia at
+        optio corrupti expedita molestias dicta in debitis perspiciatis dolorum praesentium? Animi, eos fuga?</p>
+    </div>
+
+    <button (click)="displayFormation()">Afficher la formation Lorem ipsum</button>
+  </div>
+
+</div>

@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let formation of formations; index as i; first as f; last as l; even as e">
+    <p [style.color]="getColorByElement(f,l)" [style.background-color]="setBkg(e)">{{i}} - {{ formation.nom | titlecase }} - {{ formation.price | currency:'EUR' }} - Du {{ formation.dateStart | date:'dd/MM/yyyy' }} au {{ formation.dateEnd | date:'dd/MM/yyyy' }}</p>
+  </li>
+</ul>

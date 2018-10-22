@@ -1,0 +1,15 @@
+<h1>ngSwitch:</h1>
+
+<div [ngSwitch]="formations.length">
+  <p *ngSwitchCase="0">Aucune formation disponibles</p>
+  <p *ngSwitchCase="1">Une formation disponible : </p>
+  <p *ngSwitchDefault>Formations disponibles :</p>
+</div>
+
+<h1>ngFor:</h1>
+
+<ul>
+  <li *ngFor="let formation of formations; index as i; first as f; last as l; even as e">
+    <p [style.color]="getColorByElement(f,l)" [style.background-color]="setBkg(e)">{{i}} - {{ formation.nom | titlecase }} - {{ formation.price | currency:'EUR' }} - Du {{ formation.dateStart | date:'dd/MM/yyyy' }} au {{ formation.dateEnd | date:'dd/MM/yyyy' }}</p>
+  </li>
+</ul>
