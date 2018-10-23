@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let formation of formations; index as i;">
+    <p>{{i}} - {{ formation.nom | titlecase }} - {{ formation.description }}</p>
+  </li>
+</ul>

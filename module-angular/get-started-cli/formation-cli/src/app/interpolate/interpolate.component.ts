@@ -12,7 +12,7 @@ export class InterpolateComponent implements OnInit {
 
   prenom: String = 'John';
   nom: String = 'Doe';
-  formation: Formation = new Formation();
+  formation: Formation = new Formation("House of Code", "", "", "");
   formationJS: FormationComponent ;
   color: Boolean = true;
   isHidden: Boolean = false;

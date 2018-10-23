@@ -10,6 +10,7 @@ import { ForComponent } from './for/for.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormationItemComponent } from './formation-item/formation-item.component';
+import { FormationItemOutputComponent } from './formation-item-output/formation-item-output.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormationItemComponent } from './formation-item/formation-item.componen
     NgStyleComponent,
     PipesComponent,
     FormationItemComponent,
+    FormationItemOutputComponent,
   ],
   imports: [
     BrowserModule
