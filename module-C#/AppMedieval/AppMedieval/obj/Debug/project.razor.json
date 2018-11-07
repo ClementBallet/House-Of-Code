@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\adminHOC\\Documents\\GitHub\\House-Of-Code\\module-C#\\AppMedieval\\AppMedieval\\AppMedieval.csproj",
+  "TargetFramework": "v4.6.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

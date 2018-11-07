@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HOC_console", "HOC_console\HOC_console.csproj", "{132A0438-D857-4552-9A02-83B0FFE72623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib_util", "Lib_util\Lib_util.csproj", "{5FBD70C6-568C-48D7-836A-21FDC5243283}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{132A0438-D857-4552-9A02-83B0FFE72623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132A0438-D857-4552-9A02-83B0FFE72623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132A0438-D857-4552-9A02-83B0FFE72623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132A0438-D857-4552-9A02-83B0FFE72623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FBD70C6-568C-48D7-836A-21FDC5243283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FBD70C6-568C-48D7-836A-21FDC5243283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FBD70C6-568C-48D7-836A-21FDC5243283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FBD70C6-568C-48D7-836A-21FDC5243283}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC75279E-213E-483B-9F95-2FA6605B4CD6}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\AppMedieval\AppMedieval\bin\Debug\AppMedieval.exe.config
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\AppMedieval\AppMedieval\bin\Debug\AppMedieval.exe
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\AppMedieval\AppMedieval\bin\Debug\AppMedieval.pdb
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\AppMedieval\AppMedieval\obj\Debug\AppMedieval.csprojAssemblyReference.cache
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\AppMedieval\AppMedieval\obj\Debug\AppMedieval.csproj.CoreCompileInputs.cache
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\AppMedieval\AppMedieval\obj\Debug\AppMedieval.exe
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\AppMedieval\AppMedieval\obj\Debug\AppMedieval.pdb

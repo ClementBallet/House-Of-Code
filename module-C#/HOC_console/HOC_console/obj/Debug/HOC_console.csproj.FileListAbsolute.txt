@@ -1,0 +1,7 @@
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\HOC_console\HOC_console\bin\Debug\HOC_console.exe.config
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\HOC_console\HOC_console\bin\Debug\HOC_console.exe
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\HOC_console\HOC_console\bin\Debug\HOC_console.pdb
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\HOC_console\HOC_console\obj\Debug\HOC_console.csprojAssemblyReference.cache
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\HOC_console\HOC_console\obj\Debug\HOC_console.csproj.CoreCompileInputs.cache
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\HOC_console\HOC_console\obj\Debug\HOC_console.exe
+C:\Users\adminHOC\Documents\GitHub\House-Of-Code\module-C#\HOC_console\HOC_console\obj\Debug\HOC_console.pdb
