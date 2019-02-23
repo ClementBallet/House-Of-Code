@@ -1,0 +1,41 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section {
+    width: 500px;
+}
+
+details {
+    border: 1px solid rgba(0,0,0,.125);
+    font-size: 20px;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+summary:focus {
+    outline: none;
+}
+
+summary {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+p {
+    padding: 1.25rem;
+    cursor: auto;
+}
+
